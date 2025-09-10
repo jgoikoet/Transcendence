@@ -1,1 +1,1 @@
-![Game risitas](https://raw.githubusercontent.com/jgoikoet/so_long/master/game.png)
+![Game risitas](https://raw.githubusercontent.com/jgoikoet/Transcendence/master/frontend/app/src/localCobeteGame/images/intro.jpg)
