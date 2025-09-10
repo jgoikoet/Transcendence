@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <div class="card mx-auto mb-4 border-dark" style="max-width: 500px;">
+        <div class="card-header bg-dark d-flex justify-content-center align-items-center" style="color: #f6f8fa;">
+            <h5 class="mb-0"><b>Send request</b></h5>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-center align-items-center vh-50">
+                <form class="w-100" id="deleteFriendForm">
+                    <p class="text-center">Do you want to send a friendship request to <mark id="friend-name" style="font-weight: bold;"> </mark>?</p>
+                    <div class="d-flex justify-content-around mt-3">
+                        <button type="button" class="btn btn-success" id="yes-botton" style="border: solid black;">Yes</button>
+                        <button type="button" class="btn btn-danger spa-route" style="border: solid black;" data-path="/SearchUser">No</button>
+                    </div>
+                    <div class="mb-2 text-center" id="error-div-executeFriendRequest"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

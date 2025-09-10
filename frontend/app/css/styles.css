@@ -1,0 +1,158 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('images/fondo_1280.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+nav, footer {
+    padding: 10px;
+    background-color: #bdbaba;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    transition: background-color 0.5s;
+}
+
+canvas {
+    border: 1px solid black;
+}
+
+#colorPickerContainer {
+    display: none;
+}
+
+#friendsList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.friend-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.online {
+    background-color: green;
+}
+
+.offline {
+    background-color: red;
+}
+
+.friends-container {
+    background-color: #d3d3d3;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#matchHistory {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn_profile1 {
+    width: 200px;
+}
+
+#search-user-form .form-control {
+    height: 35px;
+    padding: 5px; 
+}
+
+#search-user-form button {
+    height: 35px; 
+}
+
+.spa-route {
+    cursor: pointer;
+}
+
+.container-fluid {
+    height: 100%;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: auto;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+.sended-message,
+.received-message,
+.received-match-request {
+    padding: 10px;
+    border-radius: 25px;
+    max-width: 80%;
+    word-wrap: break-word;
+    margin: 5px 0;
+}
+
+.sended-message {
+    background-color: lightgreen;
+    align-self: flex-end;
+}
+
+.received-message,
+.received-match-request {
+    background-color: lightblue;
+    align-self: flex-start;
+}

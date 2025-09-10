@@ -1,0 +1,155 @@
+services:
+  api_gateway:
+    container_name: api_gateway
+    build: ./api_gateway
+    image: api_gateway
+    ports:
+      - 49998:443
+    restart: unless-stopped
+    networks:
+      - backend_net
+
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    image: frontend
+    ports:
+      - 49999:443
+    volumes:
+      - ./frontend/app:/usr/share/nginx/html
+    restart: unless-stopped
+
+  user_management_api:
+    container_name: user_management_api
+    build: ./user_management
+    image: user_management_api
+    volumes:
+      - ./user_management/app/user_management_api:/usr/src/app
+    depends_on:
+      - user_management_db
+    env_file:
+      - ./user_management/.env
+      - ./user_management_db/.env
+    restart: unless-stopped
+    networks:
+      - user_management_net
+      - backend_net
+
+  user_management_db:
+    container_name: user_management_db
+    image: postgres
+    env_file:
+      - ./user_management_db/.env
+    restart: unless-stopped
+    networks:
+      - user_management_net
+
+  multiplayer_service:
+    container_name: multiplayer_service
+    build: ./multiplayer
+    image: multiplayer_service
+    volumes:
+      - ./multiplayer/app/multiplayer_service:/usr/src/app
+    depends_on:
+      - rabbitmq
+    env_file:
+      - ./multiplayer/.env
+      - ./rabbitmq/.env
+    restart: unless-stopped
+    networks:
+      - backend_net
+
+  chat_service:
+    container_name: chat_service
+    build: ./chat
+    image: chat_service
+    depends_on:
+      - chat_db
+    volumes:
+      - ./chat/app/chat_service:/usr/src/app
+    env_file:
+      - ./chat_db/.env
+    restart: unless-stopped
+    networks:
+      - chat_net
+      - backend_net
+
+  chat_db:
+    container_name: chat_db
+    image: postgres
+    env_file:
+      - ./chat_db/.env
+    restart: unless-stopped
+    networks:
+      - chat_net
+
+  match_history_api:
+    container_name: match_history_api
+    build: ./match_history
+    image: match_history_api
+    volumes:
+      - ./match_history/app/user_management_api:/usr/src/app
+    depends_on:
+      - match_history_db
+      - rabbitmq
+    env_file:
+      - ./rabbitmq/.env
+      - ./match_history_db/.env
+    restart: unless-stopped
+    networks:
+      - match_history_net
+      - backend_net
+
+  match_history_db:
+    container_name: match_history_db
+    image: postgres
+    env_file:
+      - ./match_history_db/.env
+    restart: unless-stopped
+    networks:
+      - match_history_net
+
+  rabbitmq:
+    image: rabbitmq:4
+    container_name: rabbitmq
+    env_file:
+      - ./rabbitmq/.env
+    restart: unless-stopped
+    networks:
+      - backend_net
+
+  multiplayer_cobete_service:
+    container_name: multiplayer_cobete_service
+    build: ./multiplayer_cobete
+    image: multiplayer_cobete_service
+    volumes:
+      - ./multiplayer_cobete/app/multiplayer_service:/usr/src/app
+    env_file:
+      - ./match_history_cobete_db/.env
+    restart: unless-stopped
+    networks:
+      - backend_net
+      - match_history_cobete_net
+    depends_on:
+      - match_history_cobete_db
+
+  match_history_cobete_db:
+    container_name: match_history_cobete_db
+    image: postgres
+    env_file:
+      - ./match_history_cobete_db/.env
+    restart: unless-stopped
+    networks:
+      - match_history_cobete_net
+
+networks:
+  user_management_net:
+    driver: bridge
+  chat_net:
+    driver: bridge
+  backend_net:
+    driver: bridge
+  match_history_net:
+    driver: bridge
+  match_history_cobete_net:
+    driver: bridge

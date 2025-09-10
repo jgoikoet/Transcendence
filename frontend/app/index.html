@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Transcendence</title>
+    <meta name="description" content="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/style_pong.css">
+    <script type="module" src="./src/SPA_router/SPA_main_Setter.js"></script>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand spa-route" href="/" id="home1-div"><b class="spa-route" data-path="/" id="home1-div-name">Home</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
+                </ul>      
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto align-items-center">
+                    <li class="nav-item dropdown ms-3" id="Tournaments-Menu">
+                        <a class="nav-link dropdown-toggle" href="#" id="friendsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-trophy-fill" style="font-size: 25px; color: black;"></i>
+                        </a>
+                        <ul class="dropdown-menu friends-dropdown-menu text-center" aria-labelledby="friendsDropdown">
+                            <li><a class="dropdown-item spa-route" href="/MatchHistory1v1_interface">1v1 History Pong & Cobete</a></li>
+                            <li><a class="dropdown-item spa-route" href="/MatchHistoryTournament">Pong Tournament History</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <a class="nav-link active spa-route" aria-current="page" href="/SearchUser" id="SearchUser-link">
+                            <i class="bi bi-search-heart-fill spa-route" data-path="/SearchUser" style="font-size: 27px;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="nav-link active spa-route" aria-current="page" href="/Friends" id="Chat">
+                            <i class="bi bi-chat-dots spa-route" data-path="/Friends" style="font-size: 27px;"></i>
+                        </a>
+                    </li>
+               
+                    <li class="nav-item dropdown ms-3" id="Friends-Menu">
+                        <a class="nav-link dropdown-toggle" href="#" id="friendsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-fill" style="font-size: 32px; color: black;"></i>
+                        </a>
+                        <ul class="dropdown-menu friends-dropdown-menu text-center" aria-labelledby="friendsDropdown">
+                            <li><a class="dropdown-item spa-route" href="/FriendsWait">Friends Waiting</a></li>
+                            <li><a class="dropdown-item spa-route" href="/FriendsBlocked">Blocked Friends</a></li>
+                            <li><a class="dropdown-item spa-route" href="/FriendsRequest">Friend Requests</a></li>
+                        </ul>
+                    </li>
+                 
+                    <li class="nav-item d-flex align-items-center ms-3">
+                        <a class="nav-link active spa-route" href="/PrivateProfile" id="Private-profile-link">
+                            <img class="spa-route rounded-circle mt-4" data-path="/PrivateProfile"  src="" id="id-avatar" style="width: 33px; height: 33px; border: solid black;">
+                            <p class="spa-route mb-0" id="id-username" data-path="/PrivateProfile" style="text-align: center; font-weight: bold;"></p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <a class="nav-link active spa-route" aria-current="page" href="/Register" id="register-link" style="font-weight: bold;">Register</a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <a class="nav-link active spa-route" aria-current="page" href="/Login" id="login-link" style="font-weight: bold;">Login</a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <i class="bi bi-power spa-route" data-path="/SignOut" style="font-size: 32px;" id="signout-link"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main id="spa-template-content"></main>
+    <footer>
+        Pong Transcendence Game
+    </footer>
+</body>
+</html>

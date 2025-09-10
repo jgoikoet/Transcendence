@@ -1,0 +1,73 @@
+<div class="container mt-5">
+    <div class="card mx-auto mb-5 border-dark" style="max-width: 500px;">
+        <div class="card-header bg-dark d-flex justify-content-center align-items-center" style="color: #f6f8fa;">
+            <h5 class="mb-0"><b>1v1 stats for Cobete Game</b></h5>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-around mt-2">
+                <div class="container mt-0" style="max-width: 500px;">
+                    <div class="d-flex align-items-center border rounded-2 p-2 mb-2 bg-dark" style="color: #f6f8fa; height: auto;">
+                        <i class="bi bi-joystick text-primary" style="font-size: 30px; margin-right: 10px;"></i>
+                        <div>
+                            <small class="mb-0"><b>Played: </b></small>
+                            <small class="text-white" style="font-size: 15px;" id="1v1-total-cobete">0</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mt-0" style="max-width: 500px;">
+                    <div class="d-flex align-items-center border rounded-2 p-2 mb-2 bg-dark" style="color: #f6f8fa; height: auto;">
+                        <i class="bi bi-hand-thumbs-up text-success" style="font-size: 30px; margin-right: 10px;"></i>
+                        <div>
+                            <small class="mb-0"><b>Wins: </b></small>
+                            <small class="text-white" style="font-size: 15px;" id="1v1-wins-cobete">0</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mt-0" style="max-width: 500px;">
+                    <div class="d-flex align-items-center rounded-2 p-2 mb-2 bg-dark" style="color: white; max-width: 500px;">
+                        <i class="bi bi-hand-thumbs-down text-danger" style="font-size: 30px; margin-right: 10px;"></i>
+                        <div>
+                            <small class="mb-0"><b>Losses: </b></small>
+                            <small style="font-size: 15px;" id="1v1-losses-cobete">0</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-2" style="max-width: 500px;">
+                <div class="d-flex align-items-center justify-content-center rounded-2 p-2 mb-0" style="color: black; max-width: 500px; background-color: white;">
+                    <i class="bi bi-stars text-warning" style="font-size: 40px; margin-right: 10px;"></i>
+                    <div>
+                        <small class="mb-0 me-2"><b style="font-size: 20px;">Win Rate: </b></small>
+                        <small style="font-size: 20px;" id="1v1-winrate-cobete">0%</small>
+                    </div>
+                    <i class="bi bi-stars text-warning" style="font-size: 40px; margin-left: 10px;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="card mx-auto mb-4 border-dark" style="max-width: 500px;">
+        <div class="card-header bg-dark d-flex justify-content-center align-items-center" style="color: #f6f8fa;">
+            <h5 class="mb-0"><b>1v1 history</b></h5>
+        </div>
+        <div class="card-body">
+            <ul class="list-group" id="matchList-cobete">
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="matchDetailsModal-cobete" tabindex="-1" aria-labelledby="matchDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="matchDetailsBody-cobete">Match Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="matchDetailsBody-cobete">
+            </div>
+        </div>
+    </div>
+</div>

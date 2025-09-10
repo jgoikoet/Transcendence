@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <div class="card mx-auto mb-4 border-dark" style="max-width: 500px;">
+        <div class="card-header bg-dark d-flex justify-content-center align-items-center" style="color: #f6f8fa;">
+            <h5 class="mb-0"><b><span id="public-title-name"></span> profile</b></h5>
+        </div>
+        <div class="card-body">
+            <div class="container text-center">
+                <div class="position-relative">
+                    <img id="PublicAvatarImage" src="img/avatar.jpg" alt="Avatar" class="rounded-circle" style="width: 100px; height: 100px; border: 2px solid rgb(6, 6, 6);">
+                    <input type="file" id="imageInput" style="display: none;" accept="image/*">
+                </div>
+                <h4><b>Username: </b><span id="PublicProfile-username">usuario</span></h4>
+            </div>
+
+            <div class="mt-0 d-flex justify-content-center">
+                <div class="text-center">
+                    <input type="file" id="avatarInput" style="display: none;" accept="image/*">
+                    <div class="mt-4">
+                        <p><b>Created at: </b><span id="date_joined_public">2023-09-01</span></p>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="d-flex">
+                <div class="container mt-2 spa-route" data-path="/MatchHistory1v1_interface_public" style="max-width: 500px;">
+                    <div class="d-flex align-items-center border rounded-2 p-2 mb-2 spa-route bg-dark" style="color: #f6f8fa; height: 100px;" data-path="/MatchHistory1v1_interface_public">
+                        <i class="bi bi-list-ol text-info spa-route" style="font-size: 40px; margin-right: 10px;" data-path="/MatchHistory1v1_interface_public"></i>
+                        <div>
+                            <h5 class="mb-0 spa-route" data-path="/MatchHistory1v1_interface_public"><b class="spa-route" data-path="/MatchHistory1v1_interface_public">1v1 History</b></h5>
+                            <small class="text-white spa-route" data-path="/MatchHistory1v1_interface_public">1v1 game stats</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mt-2 spa-route" data-path="/MatchHistoryTournamentPublic" style="max-width: 500px;">
+                    <div class="d-flex align-items-center border rounded-2 p-2 mb-2 spa-route bg-dark" style="color: #f6f8fa; height: 100px;" data-path="/MatchHistoryTournamentPublic">
+                        <i class="bi bi-list-ol text-info spa-route" style="font-size: 40px; margin-right: 10px;" data-path="/MatchHistoryTournamentPublic"></i>
+                        <div>
+                            <h5 class="mb-0 spa-route" data-path="/MatchHistoryTournamentPublic"><b class="spa-route" data-path="/MatchHistoryTournamentPublic">Tournament History</b></h5>
+                            <small class="text-white spa-route" data-path="/MatchHistoryTournamentPublic">Tournament stats</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
